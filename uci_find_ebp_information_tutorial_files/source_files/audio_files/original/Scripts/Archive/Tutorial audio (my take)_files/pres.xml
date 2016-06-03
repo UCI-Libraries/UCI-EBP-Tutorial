@@ -1,0 +1,23 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="screen" gridspacingx="49152" gridspacingy="49152"
+  subsetembed="1">
+  <p:master id="3" slidesn="1CA1491,EDECC110" type="main" href="master03.htm"
+   xmlhref="master03.xml" template="Office Theme" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+   </p:schemes>
+  </p:master>
+  <p:master id="1" slidesn="1CA1491,F07F04B0" type="notes" href="master01.htm"
+   layout="notes" slots="header,dateTime,slideImage,body,footer,slideNumber"/>
+  <p:slide id="1" slidesn="1CA1491,EDEDAB70" href="slide0001.htm"/>
+  <p:viewstate type="slideView" restoredleft="156" restoredtop="499"
+   manualadjusttop="t" hideoutlineicons="t"/>
+  <p:slideshowsettings pencolor="rgb(255,0,0)"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="4101"/>
+</xml>

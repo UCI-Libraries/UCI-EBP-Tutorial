@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<audacityproject projname="Mrs Spring_data" version="1.1.0" audacityversion="1.2.6" sel0="44.5765380038" sel1="51.1697863971" vpos="0" h="17.1275624209" zoom="26.7405243516" rate="44100.000000" >
+	<tags title="" artist="" album="" track="-1" year="" genre="-1" comments="" id3v2="1" />
+	<wavetrack name="Mrs Spring" channel="2" linked="0" offset="0.00000000" rate="44100.000000" gain="1.000000" pan="0.000000" >
+		<sequence maxsamples="262144" sampleformat="262159" numsamples="2311513" >
+			<waveblock start="0" >
+				<simpleblockfile filename='b00041.au' len='163379' min='-0.264349' max='0.224283' rms='0.024446'/>
+			</waveblock>
+			<waveblock start="163379" >
+				<simpleblockfile filename='b00046.au' len='227993' min='-0.625708' max='0.720080' rms='0.079759'/>
+			</waveblock>
+			<waveblock start="391372" >
+				<pcmaliasblockfile summaryfile='b00009.auf' aliasfile='I:\SHARED\CONTENT\UCI_Libraries\EBM_2009\Source_files\Audio\edited\Mrs Spring.wav' aliasstart='262144' aliaslen='262144' aliaschannel='0' min='-0.590851' max='0.749969' rms='0.101081'/>
+			</waveblock>
+			<waveblock start="653516" >
+				<pcmaliasblockfile summaryfile='b00010.auf' aliasfile='I:\SHARED\CONTENT\UCI_Libraries\EBM_2009\Source_files\Audio\edited\Mrs Spring.wav' aliasstart='524288' aliaslen='262144' aliaschannel='0' min='-0.699860' max='0.422333' rms='0.109570'/>
+			</waveblock>
+			<waveblock start="915660" >
+				<simpleblockfile filename='b00050.au' len='181327' min='-0.486786' max='0.429688' rms='0.075029'/>
+			</waveblock>
+			<waveblock start="1096987" >
+				<simpleblockfile filename='b00051.au' len='181327' min='-0.610901' max='0.431213' rms='0.076138'/>
+			</waveblock>
+			<waveblock start="1278314" >
+				<pcmaliasblockfile summaryfile='b00012.auf' aliasfile='I:\SHARED\CONTENT\UCI_Libraries\EBM_2009\Source_files\Audio\edited\Mrs Spring.wav' aliasstart='1048576' aliaslen='262144' aliaschannel='0' min='-0.776428' max='0.570862' rms='0.095249'/>
+			</waveblock>
+			<waveblock start="1540458" >
+				<pcmaliasblockfile summaryfile='b00013.auf' aliasfile='I:\SHARED\CONTENT\UCI_Libraries\EBM_2009\Source_files\Audio\edited\Mrs Spring.wav' aliasstart='1310720' aliaslen='262144' aliaschannel='0' min='-0.674408' max='0.635162' rms='0.076624'/>
+			</waveblock>
+			<waveblock start="1802602" >
+				<simpleblockfile filename='b00056.au' len='254455' min='-0.776825' max='0.360168' rms='0.072353'/>
+			</waveblock>
+			<waveblock start="2057057" >
+				<simpleblockfile filename='b00057.au' len='254456' min='-0.295891' max='0.431696' rms='0.041550'/>
+			</waveblock>
+		</sequence>
+		<envelope numpoints='16'>
+			<controlpoint t='0.486148518498' val='1.000000000000'/>
+			<controlpoint t='0.486153518498' val='1.000000000000'/>
+			<controlpoint t='1.951314828115' val='1.000000000000'/>
+			<controlpoint t='1.951319828115' val='1.000000000000'/>
+			<controlpoint t='6.020819344471' val='1.000000000000'/>
+			<controlpoint t='6.020824344471' val='1.000000000000'/>
+			<controlpoint t='7.485985654089' val='1.000000000000'/>
+			<controlpoint t='7.485990654089' val='1.000000000000'/>
+			<controlpoint t='23.858913830884' val='1.000000000000'/>
+			<controlpoint t='23.858918830884' val='1.000000000000'/>
+			<controlpoint t='26.138061423623' val='1.000000000000'/>
+			<controlpoint t='26.138066423623' val='1.000000000000'/>
+			<controlpoint t='44.576533003783' val='1.000000000000'/>
+			<controlpoint t='44.576538003783' val='1.000000000000'/>
+			<controlpoint t='51.169781397063' val='1.000000000000'/>
+			<controlpoint t='51.169786397063' val='1.000000000000'/>
+		</envelope>
+	</wavetrack>
+</audacityproject>

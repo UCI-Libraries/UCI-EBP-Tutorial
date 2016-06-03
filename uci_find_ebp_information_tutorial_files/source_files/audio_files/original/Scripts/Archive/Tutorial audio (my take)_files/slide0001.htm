@@ -1,0 +1,431 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+xmlns:oa="urn:schemas-microsoft-com:office:activation"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 12">
+<link id=Main-File rel=Main-File href="../Tutorial%20audio%20(my%20take).htm">
+<link rel=Preview href=preview.wmf>
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+p\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+v\:textbox {display:none;}
+</style>
+<![endif]-->
+<title>PowerPoint Presentation</title>
+<meta name=Description content="8/3/2009">
+<link rel=Stylesheet href="master03_stylesheet.css">
+<!--[if gte IE 5]>
+<object id=MSOANIM classid="CLSID:A4639D2F-774E-11D3-A490-00C04F6843FB"></object>
+<object id=MSOTIME classid="CLSID:A4639D29-774E-11D3-A490-00C04F6843FB"></object>
+<![endif]-->
+<![if !ppt]>
+
+<bgsound id=pptSound>
+
+<style media=print>
+<!--.sld
+	{left:0px !important;
+	width:6.0in !important;
+	height:4.5in !important;
+	font-size:103% !important;}
+-->
+</style>
+<style>
+<!--
+oa\:* { BEHAVIOR: url(#MSOANIM#ANIM) url(#MSOTIME#TIME) }
+oa\:par,oa\:seq,oa\:iterate { BEHAVIOR:url(#MSOTIME) }
+oa\:video,oa\:audio {BEHAVIOR:url(#MSOTIME) url(#MSOTIME#MEDIA) }
+-->
+</style>
+<script><!--
+function LoadSld()
+{
+	var sld=GetObj("SlideObj")
+	if( !g_supportsPPTHTML ) {
+		sld.style.visibility="visible"
+		return
+	}
+	if( MakeNotesVis() ) return
+	runAnimations = _InitAnimations();
+	if( IsWin("PPTSld") )
+		parent.SldUpdated(GetSldId())
+	g_origSz=parseInt(SlideObj.style.fontSize)
+	g_origH=sld.style.posHeight
+	g_origW=sld.style.posWidth
+	g_scaleHyperlinks=(document.all.tags("AREA").length>0)
+	if( g_scaleHyperlinks )
+		InitHLinkArray()
+	if( g_scaleInFrame||(IsWin("PPTSld") && parent.IsFullScrMode() ) )
+		document.body.scroll="no"
+	_RSW()
+	if( IsWin("PPTSld") && parent.IsFullScrMode() )
+		FullScrInit();
+	
+	MakeSldVis();
+	
+	if( runAnimations )
+	{
+		if( document.all("NSPlay") )
+			document.all("NSPlay").autoStart = false;
+		if( sld.filters && sld.filters.revealtrans )
+			setTimeout( "document.body.start()", sld.filters.revealtrans.duration * 1000 );
+		else
+			document.body.start();
+	}
+}
+function MakeSldVis()
+{
+	var fTrans=g_showAnimation && SldHasTrans()
+	if( fTrans )
+	{
+		if( g_bgSound ) {
+			idx=g_bgSound.indexOf(",");
+			pptSound.src=g_bgSound.substr( 0, idx );
+			pptSound.loop= -(parseInt(g_bgSound.substr(idx+1)));
+		}
+		SlideObj.filters.revealtrans.Apply()
+    }
+	SlideObj.style.visibility="visible"
+	if( fTrans )
+		SlideObj.filters.revealtrans.Play()
+}
+function MakeNotesVis()
+{
+	if( !IsNts() ) return false
+	SlideObj.style.display="none"
+	nObj = document.all.item("NotesObj")
+	parent.SetHasNts(0)
+	if( nObj ) {
+		nObj.style.display=""
+		parent.SetHasNts(1)
+	}
+	return 1
+}
+function ChkAutoAdv()
+{
+	if(SldHasTrans())
+		SlideObj.onfilterchange=AutoAdv
+	else
+		AutoAdv()
+}
+function AutoAdv()
+{
+	if(!IsWin("PPTSld") || !gUseSldTimings )return
+	var sld=GetCurSld()
+	if( (sld.mAdvDelay>0) && !parent.IsFramesMode() )
+		setTimeout("parent.GoToNextSld()",sld.mAdvDelay)
+}
+function GetObj(id)
+{
+	if(g_supportsPPTHTML) return document.all(id);
+	else return document.getElementById(id);
+}
+function SldHasTrans() { return SlideObj.style.filter != ""; }
+function GetSldId() { return sId=location.href.substring(location.href.lastIndexOf('/')+1) }
+function HideMenu() { if( frames["PPTSld"] && PPTSld.document.all.item("ctxtmenu") && PPTSld.ctxtmenu.style.display!="none" ) { PPTSld.ctxtmenu.style.display='none'; return true } return false }
+function IsWin( name ) { return window.name == name }
+function IsNts() { return IsWin("PPTNts") }
+function IsSldOrNts() { return( IsWin("PPTSld")||IsWin("PPTNts") ) }
+function SupportsPPTAnimation() { return( navigator.platform == "Win32" && navigator.appVersion.indexOf("Windows")>0 ) }
+function SupportsPPTHTML()
+{
+	var appVer=navigator.appVersion, msie=appVer.indexOf("MSIE "), ver=0
+	if( msie >= 0 )
+		ver=parseFloat( appVer.substring( msie+5, appVer.indexOf(";",msie) ) )
+	else
+		ver=parseInt(appVer)
+	return( ver >= 4 && msie >= 0 )
+}
+function _RSW()
+{
+	if( !g_supportsPPTHTML || IsNts() ||
+	  ( !g_scaleInFrame && (!IsWin("PPTSld") || !parent.IsFullScrMode()) ) )
+		return
+        var padding=0;
+        if( IsWin("PPTSld") && parent.IsFramesMode() ) padding=6
+	cltWidth=document.body.clientWidth-padding
+	cltHeight=document.body.clientHeight-padding
+	factor=(1.0*cltWidth)/g_origW
+	if( cltHeight < g_origH*factor )
+		factor=(1.0*cltHeight)/g_origH
+	newSize = g_origSz * factor
+	if( newSize < 1 ) newSize=1
+	s=SlideObj.style
+	s.fontSize=newSize+"px"
+	s.posWidth=g_origW*factor
+	s.posHeight=g_origH*factor
+	s.posLeft=(cltWidth-s.posWidth+padding)/2
+	s.posTop=(cltHeight-s.posHeight+padding)/2
+	if( g_scaleHyperlinks )
+		ScaleHyperlinks( factor )
+}
+function _InitAnimations()
+{
+	animRuntimeInstalled = ''+document.body.localTime != 'undefined';
+	isFullScreen = (window.name == "PPTSld") && !parent.IsFramesMode();
+	g_animUseRuntime = g_showAnimation && animRuntimeInstalled && !(isFullScreen && parent.IsSldVisited());
+	if( g_animUseRuntime ) {
+		collSeq = document.all.tags("seq");
+		if( collSeq != null ) {
+			for(ii=0;ii<collSeq.length;ii++) {
+				if( collSeq[ii].getAttribute( "p:nodeType" ) == "mainSeq" ) {
+					g_animMainSequence = collSeq[ii];
+					break;
+				}
+			}
+		}
+		if( g_animItemsToHide && document.body.playAnimations != false ) {
+			for(jj = 0; jj < g_animItemsToHide.length; jj++) {
+				if( hideObj = GetObj(g_animItemsToHide[jj]) )
+					hideObj.runtimeStyle.visibility="hidden";
+			}
+		}
+		if( g_animInteractiveItems ){
+			for(jj = 0; jj < g_animInteractiveItems.length; jj++) {
+				if( triggerObj = GetObj(g_animInteractiveItems[jj]) )
+					triggerObj.runtimeStyle.cursor="hand";
+			}
+		}
+		if( gUseSldTimings && ''+g_animSlideTime != 'undefined' ) {
+			adjustedTime = document.body.calculateAutoAdvanceTimes( g_animSlideTime, g_animEffectTimings );
+			if( IsWin("PPTSld") && adjustedTime != g_animSlideTime ) {
+			   var sld = GetCurSld();
+			   sld.mAdvDelay = adjustedTime * 1000;
+			}
+		}
+	}
+	return g_animUseRuntime;
+}
+var g_HLinkArray = new Array();
+function IMapAreaObj( areaObj, coords )
+{
+  this.areaObj = areaObj;
+  this.coords = coords;
+}
+function InitHLinkArray()
+{
+  var appVer = navigator.appVersion;
+  var msie = appVer.indexOf ( "MSIE " )
+  var ver = 0;
+  if ( msie >= 0 )
+    ver = parseInt ( appVer.substring( msie+5 ) );
+  linkNum = 0;
+  for (i=0; i<document.all.tags("AREA").length; i++) {
+    areaObj = document.all.tags("AREA").item(i);
+    if( ( areaObj.id != "pptxscale" ) || ( ver > 4 ) )
+      g_HLinkArray[linkNum++] = new IMapAreaObj( areaObj, ParseCoords( areaObj.coords ) );
+  }
+}
+function ScaleHyperlinks( factor )
+{
+  for( ii=0; ii< g_HLinkArray.length; ii++) {
+    coordsStr="";
+    imaObj = g_HLinkArray[ii];
+    for ( jj=0; jj < imaObj.coords.length-1; jj++ )
+      coordsStr += (imaObj.coords[jj]*factor) + ",";
+    coordsStr += (imaObj.coords[jj]*factor);
+    imaObj.areaObj.coords = coordsStr;
+  }
+}
+function ParseCoords( coordsStr )
+{
+  var numArray = new Array();
+  var i = curPos = commaPos = 0;
+  while ( ( commaPos = coordsStr.indexOf(",", curPos) ) != -1 ) {
+    numArray[i++] = parseInt( coordsStr.substr( curPos, commaPos ) );
+    curPos = commaPos + 1;
+  }
+  numArray[i] = parseInt( coordsStr.substr( curPos ) );
+  return numArray;
+}
+function PlaySound( href, loop ){
+	href= unescape(href);
+	if( window.event ) window.event.cancelBubble = true;
+	pptSound.src = href;
+	pptSound.loop = loop ? -1 : 0;
+}
+
+var g_supportsPPTHTML = SupportsPPTHTML(), g_scaleInFrame = 1, gId="", g_bgSound="",
+    g_scaleHyperlinks = false, g_allowAdvOnClick = 1, g_showInBrowser = 0, gLoopCont = 0, gUseSldTimings = 1;
+var g_showAnimation = g_supportsPPTHTML && SupportsPPTAnimation() && g_showInBrowser;
+var g_animManager = null;
+var g_animUseRuntime = false;
+var g_animItemsToHide, g_animInteractiveItems, g_animSlideTime;
+var g_animMainSequence = null;
+
+//--></script><script><!--
+
+//--></script><script><!--
+g_animItemsToHide=new Array("_x007e_PP1395.WAV");
+g_animEffectTimings=new Array();
+g_animSlideTime=185.06;
+
+//--></script><!--[if vml]><script>g_vml = 1;
+</script><![endif]--><![endif]><p:slidetransition advancetime="185060"
+ flag="1025"/><o:shapelayout v:ext="edit">
+ <o:idmap v:ext="edit" data="2"/>
+</o:shapelayout>
+</head>
+
+<body lang=EN-US style='margin:0px;background-color:white' onresize="_RSW()"
+onload="LoadSld()" oa:clockstart="onstart">
+
+<div id=SlideObj class=sld style='position:absolute;top:0px;left:0px;
+width:554px;height:415px;font-size:16px;background-color:white;clip:rect(0%, 101%, 101%, 0%);
+visibility:hidden'><p:slide coordsize="720,540"
+ colors="#ffffff,#000000,#eeece1,#1f497d,#4f81bd,#c0504d,#0000ff,#800080"
+ masterhref="master03.xml">
+ <p:shaperange href="master03.xml#_x0000_s1025"/><p:shaperange
+  href="master03.xml#_x0000_m1026"/><v:shape id="_x0000_s2050" type="#_x0000_m1026"
+  style='position:absolute;left:54pt;top:167.75pt;width:612pt;height:115.75pt;
+  visibility:visible;mso-wrap-style:square;v-text-anchor:middle'>
+  <v:stroke o:forcedash="t"/>
+  <v:path arrowok="t"/>
+  <o:lock v:ext="edit" rotation="f" aspectratio="f" position="f" selection="f"
+   verticies="f" text="f" adjusthandles="f" grouping="t" shapetype="f"/>
+  <v:textbox style='layout-flow:horizontal;mso-rotate-with-shape:t' inset="7.2pt,3.6pt,7.2pt,3.6pt"/>
+  <p:placeholder type="centerTitle" position="-1"/></v:shape><p:shaperange
+  href="master03.xml#_x0000_m1027"/><v:shape id="_x0000_s2051" type="#_x0000_m1027"
+  style='position:absolute;left:108pt;top:306pt;width:7in;height:138pt;
+  visibility:visible;mso-wrap-style:square;v-text-anchor:top' o:gfxdata="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
+BAAEAPUAAABcBgAAAAA=
+">
+  <v:stroke o:forcedash="t"/>
+  <v:path arrowok="t"/>
+  <o:lock v:ext="edit" rotation="f" aspectratio="f" position="f" selection="f"
+   verticies="f" text="f" adjusthandles="f" grouping="t" shapetype="f"/>
+  <v:textbox style='layout-flow:horizontal;mso-rotate-with-shape:t' inset="7.2pt,3.6pt,7.2pt,3.6pt"/>
+  <p:placeholder type="subTitle" position="-1"/></v:shape>
+ <div v:shape="_x0000_s2051">
+ <div class=CB1 style='mso-margin-left-alt:468'></div>
+ <div class=CB2 style='mso-margin-left-alt:720'></div>
+ <div class=CB3 style='mso-margin-left-alt:1008'></div>
+ <div class=CB4 style='mso-margin-left-alt:1296'></div>
+ <div class=CB><span style='position:absolute;top:57.1%;left:16.06%;width:68.23%;
+ height:7.46%'><span style='color:#898989;mso-special-format:lastCR;display:
+ none'>&#13;</span></span></div>
+ </div>
+ <![if !ppt]>
+ <div style='display:none'><![endif]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+  o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+  stroked="f">
+  <v:stroke joinstyle="miter"/>
+  <v:formulas>
+   <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+   <v:f eqn="sum @0 1 0"/>
+   <v:f eqn="sum 0 0 @1"/>
+   <v:f eqn="prod @2 1 2"/>
+   <v:f eqn="prod @3 21600 pixelWidth"/>
+   <v:f eqn="prod @3 21600 pixelHeight"/>
+   <v:f eqn="sum @0 0 1"/>
+   <v:f eqn="prod @6 1 2"/>
+   <v:f eqn="prod @7 21600 pixelWidth"/>
+   <v:f eqn="sum @8 21600 0"/>
+   <v:f eqn="prod @7 21600 pixelHeight"/>
+   <v:f eqn="sum @10 21600 0"/>
+  </v:formulas>
+  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+  <o:lock v:ext="edit" aspectratio="t"/>
+ </v:shapetype><v:shape id="_x007e_PP1395.WAV" o:spid="_x0000_s2052" type="#_x0000_t75"
+  style='position:absolute;left:687pt;top:507pt;width:24pt;height:24pt;
+  visibility:visible;mso-wrap-style:square' o:gfxdata="UEsDBBQABgAIAAAAIQDb4fbL7gAAAIUBAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbHyQz07DMAyH
+70i8Q+QralM4IITa7kDhCAiNB7ASt43WOlEcyvb2pNu4IODoPz9/n1xv9vOkForiPDdwXVagiI23
+jocG3rdPxR0oScgWJ8/UwIEENu3lRb09BBKV0ywNjCmFe63FjDSjlD4Q50nv44wpl3HQAc0OB9I3
+VXWrjedEnIq03oC27qjHjympx31un0wiTQLq4bS4shrAECZnMGVTvbD9QSnOhDInjzsyuiBXWQP0
+r4R18jfgnHvJr4nOknrFmJ5xzhraRtHWf3Kkpfz/yGo5S+H73hkquyhdjr3R8m2lj09svwAAAP//
+AwBQSwMEFAAGAAgAAAAhAFr0LFu/AAAAFQEAAAsAAABfcmVscy8ucmVsc2zPwWrDMAwG4Ptg72B0
+X5TuUMaI01uh19I+gLGVxCy2jGSy9e1nemrHjpL4P0nD4SetZiPRyNnCruvBUPYcYp4tXC/Htw8w
+Wl0ObuVMFm6kcBhfX4Yzra62kC6xqGlKVgtLreUTUf1CyWnHhXKbTCzJ1VbKjMX5LzcTvvf9HuXR
+gPHJNKdgQU5hB+ZyK23zHztFL6w81c5zQp6m6P9TMfB3PtPWFCczVQtB9N4U2rp2HOA44NMz4y8A
+AAD//wMAUEsDBBQABgAIAAAAIQDWT45DwwAAANoAAAAPAAAAZHJzL2Rvd25yZXYueG1sRI9Ba8JA
+FITvBf/D8gq9FLOpYJGYVWqhJYgI2np/ZJ9JMPs27K4x+fddQehxmJlvmHw9mFb05HxjWcFbkoIg
+Lq1uuFLw+/M1XYDwAVlja5kUjORhvZo85Zhpe+MD9cdQiQhhn6GCOoQuk9KXNRn0ie2Io3e2zmCI
+0lVSO7xFuGnlLE3fpcGG40KNHX3WVF6OV6PAXTdui5d9z6eymHej+37d72ZKvTwPH0sQgYbwH360
+C61gDvcr8QbI1R8AAAD//wMAUEsBAi0AFAAGAAgAAAAhANvh9svuAAAAhQEAABMAAAAAAAAAAAAA
+AAAAAAAAAFtDb250ZW50X1R5cGVzXS54bWxQSwECLQAUAAYACAAAACEAWvQsW78AAAAVAQAACwAA
+AAAAAAAAAAAAAAAfAQAAX3JlbHMvLnJlbHNQSwECLQAUAAYACAAAACEA1k+OQ8MAAADaAAAADwAA
+AAAAAAAAAAAAAAAHAgAAZHJzL2Rvd25yZXYueG1sUEsFBgAAAAADAAMAtwAAAPcCAAAAAA==
+">
+  <v:fill o:detectmouseclick="t"/>
+  <v:imagedata src="slide0001_image001.png" o:title=""/>
+  <v:path arrowok="t"/>
+  <o:lock v:ext="edit" rotation="t"/>
+  <p:animation number="2" delay="0" type="noBuild" effect="cut"
+   direction="noBlack" flag="4356"/><p:onmouseclick action="playMedia"/><p:media
+   type="embeddedWAV" isNarration="t" length="185060">
+   <p:sound id="1" name="~PP1395.WAV" href="sound001.wav"/></p:media>
+ </v:shape><![if !ppt]></div>
+ <![endif]><![if !ppt]>
+ <div onclick="window.event.cancelBubble=true;" style='position:absolute;
+ top:93.97%;left:95.48%;width:3.42%;height:4.57%;cursor:hand'><![endif]><map
+ name="map_s4"><area href="javascript:PlaySound('sound001.wav',false);"
+ onclick="window.event.cancelBubble=true;" shape=rect
+ coords="0, 0, 19, 19"></map><![if !ppt]><img border=0
+ v:shapes="_x007e_PP1395.WAV" src="slide0001_image002.gif" usemap="#map_s4"
+ style='position:absolute;top:0%;left:0%;width:94.73%;height:94.73%;visibility:
+ hidden'><![endif]><![if !ppt]></div>
+ <![endif]></p:slide></div>
+
+<p:animation number="875210005"/><oa:par id="TimeNode0" dur="indefinite"
+ restart="never" p:nodeType="timingRoot">
+ <oa:seq id="TimeNode1" dur="indefinite" prev="document.onpptprev"
+  next="document.onpptnext" concurrent="enabled" nextAction="seek"
+  p:nodeType="mainSeq">
+  <oa:par id="TimeNode2" begin="indefinite;TimeNode1.onbegin" fill="hold">
+   <oa:par id="TimeNode3" begin="0.0" fill="hold">
+    <oa:par id="TimeNode4" o:presetID="ppt_1" o:presetClass="mediacall"
+     o:presetSubType="0x0" begin="0.0" fill="hold" p:nodeType="afterEffect">
+     <oa:command id="TimeNode5" dur="0.001" fill="hold"
+      targetElement="narrationID" type="call" cmd="playFrom(0.0)"/>
+    </oa:par>
+   </oa:par>
+  </oa:par>
+ </oa:seq>
+ <oa:audio src="sound001.wav" o:srcRefType="shape" o:srcRef="_x007e_PP1395.WAV"
+  endAfterSlide="1" hideWhenStopped="true" id="narrationID" begin="indefinite"
+  end="document.onpptprev;document.onstopaudio" repeatCount="1.0" fill="hold"
+  o:display="hidden"/>
+</oa:par>
+</body>
+
+</html>

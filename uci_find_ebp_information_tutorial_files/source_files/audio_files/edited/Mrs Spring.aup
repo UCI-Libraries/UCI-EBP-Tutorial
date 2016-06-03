@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<audacityproject projname="Mrs Spring_data" version="1.1.0" audacityversion="1.2.6" sel0="33.2454213803" sel1="48.7275411233" vpos="0" h="17.5015266659" zoom="26.7405243516" rate="44100.000000" >
+	<tags title="" artist="" album="" track="-1" year="" genre="-1" comments="" id3v2="1" />
+	<wavetrack name="Mrs Spring" channel="2" linked="0" offset="0.00000000" rate="44100.000000" gain="1.000000" pan="0.000000" >
+		<sequence maxsamples="262144" sampleformat="262159" numsamples="2160429" >
+			<waveblock start="0" >
+				<simpleblockfile filename='b00093.au' len='151983' min='-0.994431' max='0.843805' rms='0.109006'/>
+			</waveblock>
+			<waveblock start="151983" >
+				<simpleblockfile filename='b00103.au' len='151984' min='-0.804890' max='0.994965' rms='0.066852'/>
+			</waveblock>
+			<waveblock start="303967" >
+				<simpleblockfile filename='b00104.au' len='262144' min='-0.787800' max='1.000000' rms='0.134778'/>
+			</waveblock>
+			<waveblock start="566111" >
+				<simpleblockfile filename='b00105.au' len='262144' min='-0.933148' max='0.563141' rms='0.146097'/>
+			</waveblock>
+			<waveblock start="828255" >
+				<simpleblockfile filename='b00106.au' len='166484' min='-0.649044' max='0.785584' rms='0.107665'/>
+			</waveblock>
+			<waveblock start="994739" >
+				<simpleblockfile filename='b00100.au' len='166485' min='-0.786805' max='0.995439' rms='0.115858'/>
+			</waveblock>
+			<waveblock start="1161224" >
+				<simpleblockfile filename='b00101.au' len='262144' min='-1.000000' max='0.735272' rms='0.122678'/>
+			</waveblock>
+			<waveblock start="1423368" >
+				<simpleblockfile filename='b00102.au' len='262144' min='-0.784030' max='0.738436' rms='0.092115'/>
+			</waveblock>
+			<waveblock start="1685512" >
+				<simpleblockfile filename='b00107.au' len='254455' min='-0.903096' max='0.721843' rms='0.095459'/>
+			</waveblock>
+			<waveblock start="1939967" >
+				<simpleblockfile filename='b00108.au' len='220462' min='-0.685362' max='1.000000' rms='0.096169'/>
+			</waveblock>
+		</sequence>
+		<envelope numpoints='16'>
+			<controlpoint t='0.186977122499' val='1.000000000000'/>
+			<controlpoint t='0.186982122499' val='1.000000000000'/>
+			<controlpoint t='1.652143432117' val='1.000000000000'/>
+			<controlpoint t='1.652148432117' val='1.000000000000'/>
+			<controlpoint t='4.487565939978' val='1.000000000000'/>
+			<controlpoint t='4.487570939978' val='1.000000000000'/>
+			<controlpoint t='5.952732249596' val='1.000000000000'/>
+			<controlpoint t='5.952737249596' val='1.000000000000'/>
+			<controlpoint t='21.540335511895' val='1.000000000000'/>
+			<controlpoint t='21.540340511895' val='1.000000000000'/>
+			<controlpoint t='23.819483104634' val='1.000000000000'/>
+			<controlpoint t='23.819488104634' val='1.000000000000'/>
+			<controlpoint t='41.921386864296' val='1.000000000000'/>
+			<controlpoint t='41.921391864296' val='1.000000000000'/>
+			<controlpoint t='48.514635257576' val='1.000000000000'/>
+			<controlpoint t='48.514640257576' val='1.000000000000'/>
+		</envelope>
+	</wavetrack>
+</audacityproject>
